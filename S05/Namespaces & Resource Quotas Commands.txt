@@ -1,0 +1,10 @@
+Namespaces & Resource Quotas Commands
+Section 5, Lecture 55
+Commands For Cut & Paste
+
+kubectl create namespace <namespace name>
+kubectl get namespace
+kubectl create namespace cpu-limited-tomcat
+kubectl create -f ./cpu-limits.yaml —namespace=cpu-limited-tomcat (from the GitHub repo directory for this lecture)
+kubectl apply -f ./tomcat-deployment.yaml —namespace=cpu-limited-tomcat (from the GitHub repo directory for this lecture)
+kubectl describe deployment tomcat-deployment —namespace=cpu-limited-tomcat

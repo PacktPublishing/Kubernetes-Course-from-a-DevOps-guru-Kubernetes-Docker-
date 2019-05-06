@@ -1,0 +1,8 @@
+Deployments Commands
+Section 4, Lecture 39
+Commands For Cut & Paste
+
+kubectl get deployments
+kubectl rollout status
+kubectl set image
+kubectl rollout history

@@ -1,0 +1,7 @@
+Usage & Resource Monitoring Commands
+Section 5, Lecture 53
+Commands For Cut And Paste
+
+minikube addons enable heapster
+kubectl get pods --namespace=kube-system
+minikube addons open heapster

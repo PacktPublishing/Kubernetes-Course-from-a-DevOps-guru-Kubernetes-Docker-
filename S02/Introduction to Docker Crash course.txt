@@ -1,0 +1,17 @@
+Introduction to Docker Crash course
+Section 2, Lecture 4
+This Kubernetes course assumes you have a basic understanding of Docker & containers.
+
+If this is not the case, we have prepared a Docker crash course in this section to help you ramp up on Docker. This section is designed to give you a basic overview about Docker and containers so that you can have enough background knowledge to take the rest of the course. This Docker Crash course is instructed by James Lee.
+
+This section covers the following topics:
+
+Install Docker on your your laptop
+
+An overview of Docker architecture
+
+Docker containers / Docker Images / Dockerfiles
+
+Docker Compose
+
+If you already have a basic understanding about Docker and Containers, feel free to skip this section and go straight to the next section about Kubernetes: Introduction to Container Orchestration

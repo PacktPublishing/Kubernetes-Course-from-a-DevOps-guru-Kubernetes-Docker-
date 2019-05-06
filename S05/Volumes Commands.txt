@@ -1,0 +1,6 @@
+Volumes Commands
+Section 5, Lecture 48
+kubectl create -f local-volumes.yaml
+kubectl apply -f mysql-deployment.yaml
+kubectl apply -f wordpress-deployment.yaml
+minikube service wordpress --url

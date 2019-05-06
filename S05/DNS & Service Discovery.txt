@@ -1,0 +1,12 @@
+Text Lecture: DNS & Service Discovery
+Section 5, Lecture 46
+Extended reading regarding the syntax of the deployment files and kubectl commands
+
+
+If you are new to YAML file,  read Introduction to YAML: Creating a Kubernetes deployment
+
+'---' is used for separating documents. It allows us to place multiple things in a single file - e.g. services, deployments, etc. We could have made separate documents. One for service, one for deployment, but the '---' allows us placing them in a single file.
+
+What is apiVersion and which Kubernetes apiVersion Should I Use?
+
+Difference between kubectl create and kubectl apply : kubectl create can be used only for creating new deployments; kubectl apply can be used for both creating and updating deployments. Other than that they're pretty much identical.

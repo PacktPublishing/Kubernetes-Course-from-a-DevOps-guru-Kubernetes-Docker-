@@ -1,0 +1,71 @@
+Text Lecture: Minikube Setup
+Section 3, Lecture 30
+Commands
+Linux: 
+ 
+curl -LO https://storage.googleapis.com/kubernetes-release/release/$(curl -s https://storage.googleapis.com/kubernetes-release/release/stable.txt)/bin/linux/amd64/kubectl
+ 
+MacOS: 
+ 
+curl -LO https://storage.googleapis.com/kubernetes-release/release/`curl -s https://storage.googleapis.com/kubernetes-release/release/stable.txt`/bin/darwin/amd64/kubectl
+ 
+Windows: 
+ 
+curl -LO https://storage.googleapis.com/kubernetes-release/release/v1.8.0/bin/windows/amd64/kubectl.exe
+ 
+chmod +x ./kubectl
+sudo mv ./kubectl /usr/local/bin/kubectl
+kubectl version
+ 
+Linux: 
+ 
+curl -Lo minikube https://storage.googleapis.com/minikube/releases/v0.23.0/minikube-linux-amd64 && chmod +x minikube && sudo mv minikube /usr/local/bin/
+ 
+macOS: 
+ 
+curl -Lo minikube https://storage.googleapis.com/minikube/releases/v0.23.0/minikube-darwin-amd64 && chmod +x 
+minikube && sudo mv minikube /usr/local/bin/
+minikube start
+kubectl run hello-minikube --image=gcr.io/google_containers/echoserver:1.4 --port=8080
+kubectl expose deployment hello-minikube  --type=NodePort
+kubectl get pod
+curl $(minikube service hello-minikube --url)
+kubectl delete deployment hello-minikube
+minikube stop
+
+
+Trouble Shooting
+Error 1
+
+[root@larry ~]# minikube start
+Starting local Kubernetes v1.10.0 cluster...
+Starting VM...
+E0726 16:03:16.856132 3753 start.go:168] Error starting host: Error creating host: Error executing step: Running precreate checks.
+: This computer doesn't have VT-X/AMD-v enabled. Enabling it in the BIOS is mandatory.
+ 
+Retrying.
+E0726 16:03:16.856723 3753 start.go:174] Error starting host: Error creating host: Error executing step: Running precreate checks.
+: This computer doesn't have VT-X/AMD-v enabled. Enabling it in the BIOS is mandatory
+Solution:
+
+Run minikube start --vm-driver=none instead
+
+
+Error 2
+
+root@localhost ~]# minikube start
+Starting local Kubernetes v1.10.0 cluster...
+Starting VM...
+E0504 17:44:35.629203    9741 start.go:159] Error starting host: Error creating host: Error executing step: Running precreate checks.
+: VBoxManage not found. Make sure VirtualBox is installed and VBoxManage is in the path.
+ Retrying.
+E0504 17:44:35.630354    9741 start.go:165] Error starting host:  Error creating host: Error executing step: Running precreate checks.
+: VBoxManage not found. Make sure VirtualBox is installed and VBoxManage is in the path
+Solution:
+
+On Linux machines you do not need to use any VM Driver.
+
+Run below command instead.
+
+./minikube start --vm-driver=none
+If you are not running Linux machines, Install VirtualBox on the VM.

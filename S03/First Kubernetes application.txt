@@ -1,0 +1,19 @@
+Your First Kubernetes Application Commands
+Section 3, Lecture 32
+Commands
+kubectl apply -f ./deployment.yaml
+kubectl expose deployment tomcat-deployment --type=NodePort
+minikube service tomcat-deployment --url
+curl <URL>
+
+
+Trouble Shooting
+Unable to connect to the server: dial tcp 192.168.99.100:8443: i/o timeout
+
+Solution:
+
+Ensure minikube is up before running any kubectl command
+
+check the minikube status: minikube status
+
+start minikube: minikube start

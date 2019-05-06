@@ -1,0 +1,5 @@
+NOTE: AWS EKS is now generally available
+Section 3, Lecture 27
+NOTE: After this course is recoded, AWS EKS is generally available since 5 June 2018 : 
+
+https://aws.amazon.com/blogs/aws/amazon-eks-now-generally-available/

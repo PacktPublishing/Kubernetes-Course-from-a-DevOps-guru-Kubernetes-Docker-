@@ -1,0 +1,16 @@
+Text Lecture: Masters
+Section 6, Lecture 63
+Trouble Shooting
+Error 1
+
+kops create cluster maranics-k8-demo1.k8.local --zones us-west-2a --yes
+I0731 15:53:42.130448   41571 create_cluster.go:1318] Using SSH public key: /Users/xxp/.ssh/id_rsa.pub
+I0731 15:53:43.957333   41571 create_cluster.go:472] Inferred --cloud=aws from zone "us-west-2a"
+I0731 15:53:45.760687   41571 subnets.go:184] Assigned CIDR 172.20.32.0/19 to subnet us-west-2a
+ 
+error determining default DNS zone: No matching hosted zones found for ".maranics-k8-demo1.k8.local"; please create one (e.g. "k8.local") first
+Solution:
+
+run below command instead.
+
+kops create cluster cluster.k8s.local --zones us-west-2a --yes
